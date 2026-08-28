@@ -273,10 +273,197 @@
             height: 280px;
             object-fit: cover;
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
         
         .motor-card:hover img {
             transform: scale(1.15) rotate(2deg);
+        }
+        
+        /* Image Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content-wrapper {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 900px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: slideIn 0.4s ease;
+        }
+        
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(-50%) scale(0.8);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
+        }
+        
+        .modal-image-container {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 60vh;
+            object-fit: contain;
+            background: linear-gradient(to bottom, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .modal-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 0 0 24px 24px;
+        }
+        
+        .modal-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+        
+        .modal-plat {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .modal-plat i {
+            font-size: 1.5rem;
+        }
+        
+        .modal-category {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-left: 1rem;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 3rem;
+            font-weight: 300;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        
+        /* Responsive Modal */
+        @media (max-width: 768px) {
+            .modal-content-wrapper {
+                width: 95%;
+                padding: 10px;
+            }
+            
+            .modal-image {
+                max-height: 50vh;
+            }
+            
+            .modal-info {
+                padding: 1.5rem;
+            }
+            
+            .modal-title {
+                font-size: 1.25rem;
+            }
+            
+            .modal-plat {
+                font-size: 1rem;
+                padding: 0.625rem 1.25rem;
+            }
+            
+            .modal-plat i {
+                font-size: 1.25rem;
+            }
+            
+            .close-modal {
+                width: 40px;
+                height: 40px;
+                font-size: 2rem;
+                top: 10px;
+                right: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .modal-info {
+                padding: 1rem;
+            }
+            
+            .modal-title {
+                font-size: 1.125rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .modal-plat {
+                font-size: 0.9375rem;
+                padding: 0.5rem 1rem;
+                display: flex;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .modal-category {
+                font-size: 0.8125rem;
+                margin-left: 0;
+                margin-top: 0.5rem;
+                display: block;
+            }
         }
         
         .motor-card .card-body {
@@ -754,7 +941,7 @@
         <div class="row" id="armadaGrid">
 
             <!-- Honda Beat 2013 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="N 3216 AAA">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -800,8 +987,55 @@
                 </div>
             </div>
 
+            <!-- Honda Beat 2013 -->
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="N 2337 IF">
+                <div class="card motor-card">
+                    <div style="overflow: hidden; position: relative;">
+                        <span class="badge-category">Matic</span>
+                        <img src="assets/img/Beat-2013.PNG" class="card-img-top" alt="Honda Beat 2013">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Honda Beat 2013</h5>
+                        
+                        <!-- Price Tabs -->
+                        <div class="price-tabs">
+                            <button class="price-tab active" onclick="showPrice(this, 'mahasiswa_beat2013')">Mahasiswa</button>
+                            <button class="price-tab" onclick="showPrice(this, 'warga_beat2013')">Warga</button>
+                            <button class="price-tab" onclick="showPrice(this, 'wisata_beat2013')">Wisatawan</button>
+                        </div>
+                        
+                        <!-- Mahasiswa Price -->
+                        <div class="price-content active" id="mahasiswa_beat2013">
+                            <div class="price">Rp 50.000</div>
+                            <div class="price-period">per hari (Mahasiswa)</div>
+                        </div>
+                        
+                        <!-- Warga Lokal Price -->
+                        <div class="price-content" id="warga_beat2013">
+                            <div class="price">Rp 80.000</div>
+                            <div class="price-period">per hari (Warga Lokal)</div>
+                        </div>
+                        
+                        <!-- Wisatawan Price -->
+                        <div class="price-content" id="wisata_beat2013">
+                            <div class="price">Rp 85.000</div>
+                            <div class="price-period">per hari (Wisatawan)</div>
+                        </div>
+                        
+                        <p class="card-text text-muted small">
+                            <i class="bi bi-check-circle-fill text-success"></i> Gesit & lincah<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Cocok city tour<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Hemat bensin
+                        </p>
+                        <button class="btn btn-pesan" onclick="pesanViaWA('Honda Beat 2013')">
+                            <i class="bi bi-whatsapp"></i> Pesan via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Honda Beat 2013 Merah -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="KT 6465 DE">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -847,8 +1081,55 @@
                 </div>
             </div>
 
+            <!-- Honda Beat 2016 -->
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="N 3449 HI">
+                <div class="card motor-card">
+                    <div style="overflow: hidden; position: relative;">
+                        <span class="badge-category">Matic</span>
+                        <img src="assets/img/Beat2016.PNG" class="card-img-top" alt="Honda Beat 2016">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Honda Beat 2016</h5>
+                        
+                        <!-- Price Tabs -->
+                        <div class="price-tabs">
+                            <button class="price-tab active" onclick="showPrice(this, 'mahasiswa_beat2017')">Mahasiswa</button>
+                            <button class="price-tab" onclick="showPrice(this, 'warga_beat2017')">Warga</button>
+                            <button class="price-tab" onclick="showPrice(this, 'wisata_beat2017')">Wisatawan</button>
+                        </div>
+                        
+                        <!-- Mahasiswa Price -->
+                        <div class="price-content active" id="mahasiswa_beat2017">
+                            <div class="price">Rp 70.000</div>
+                            <div class="price-period">per hari (Mahasiswa)</div>
+                        </div>
+                        
+                        <!-- Warga Lokal Price -->
+                        <div class="price-content" id="warga_beat2017">
+                            <div class="price">Rp 125.000</div>
+                            <div class="price-period">per hari (Warga Lokal)</div>
+                        </div>
+                        
+                        <!-- Wisatawan Price -->
+                        <div class="price-content" id="wisata_beat2017">
+                            <div class="price">Rp 125.000</div>
+                            <div class="price-period">per hari (Wisatawan)</div>
+                        </div>
+                        
+                        <p class="card-text text-muted small">
+                            <i class="bi bi-check-circle-fill text-success"></i> Model terbaru<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Irit BBM<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Stylish
+                        </p>
+                        <button class="btn btn-pesan" onclick="pesanViaWA('Honda Beat 2016')">
+                            <i class="bi bi-whatsapp"></i> Pesan via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Honda Beat 2017 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="B 3113 PER">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -895,7 +1176,7 @@
             </div>
 
             <!-- Honda Beat 2017 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="B 3254 PEP">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -942,7 +1223,7 @@
             </div>
 
             <!-- Honda Beat 2017  -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="B 3412 PER">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -989,7 +1270,7 @@
             </div>
 
             <!-- Honda Beat Pop -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="AG 4464 RAT">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1036,7 +1317,7 @@
             </div>
 
             <!-- Honda Beat Hitam -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="N 2132 BR">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1083,7 +1364,7 @@
             </div>
 
             <!-- Honda Beat Pink -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="N 2246 CA">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1130,7 +1411,7 @@
             </div>
 
             <!-- Honda Beat Karbu -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="AG 3088 RBU">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1177,7 +1458,7 @@
             </div>
 
             <!-- Honda Beat GS -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="N 2988 GS">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1224,7 +1505,7 @@
             </div>
 
             <!-- Honda Beat 2017 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="B 3136 PER">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1270,8 +1551,55 @@
                 </div>
             </div>
 
+            <!-- Honda Vario 160 -->
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="N 2347 ACH">
+                <div class="card motor-card">
+                    <div style="overflow: hidden; position: relative;">
+                        <span class="badge-category">Matic</span>
+                        <img src="assets/img/Vario160.PNG" class="card-img-top" alt="Honda Vario 160">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Honda Vario 160</h5>
+                        
+                        <!-- Price Tabs -->
+                        <div class="price-tabs">
+                            <button class="price-tab active" onclick="showPrice(this, 'mahasiswa_vario125')">Mahasiswa</button>
+                            <button class="price-tab" onclick="showPrice(this, 'warga_vario125')">Warga</button>
+                            <button class="price-tab" onclick="showPrice(this, 'wisata_vario125')">Wisatawan</button>
+                        </div>
+                        
+                        <!-- Mahasiswa Price -->
+                        <div class="price-content active" id="mahasiswa_vario125">
+                            <div class="price">Rp 125.000</div>
+                            <div class="price-period">per hari (Mahasiswa)</div>
+                        </div>
+                        
+                        <!-- Warga Lokal Price -->
+                        <div class="price-content" id="warga_vario125">
+                            <div class="price">Rp 175.000</div>
+                            <div class="price-period">per hari (Warga Lokal)</div>
+                        </div>
+                        
+                        <!-- Wisatawan Price -->
+                        <div class="price-content" id="wisata_vario125">
+                            <div class="price">Rp 175.000</div>
+                            <div class="price-period">per hari (Wisatawan)</div>
+                        </div>
+                        
+                        <p class="card-text text-muted small">
+                            <i class="bi bi-check-circle-fill text-success"></i> Irit BBM<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Nyaman<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Bagasi luas
+                        </p>
+                        <button class="btn btn-pesan" onclick="pesanViaWA('Honda Vario 160')">
+                            <i class="bi bi-whatsapp"></i> Pesan via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Honda Vario 125 (2013) -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="B 3398 UHE">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1318,7 +1646,7 @@
             </div>
 
             <!-- Honda Vario 125 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="AE 5610 TL">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1364,8 +1692,55 @@
                 </div>
             </div>
 
+            <!-- Honda Vario 125 -->
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="BG 5008 BAD">
+                <div class="card motor-card">
+                    <div style="overflow: hidden; position: relative;">
+                        <span class="badge-category">Matic</span>
+                        <img src="assets/img/Vario125_2015.PNG" class="card-img-top" alt="Honda Vario 125">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Honda Vario 125</h5>
+                        
+                        <!-- Price Tabs -->
+                        <div class="price-tabs">
+                            <button class="price-tab active" onclick="showPrice(this, 'mahasiswa_vario150')">Mahasiswa</button>
+                            <button class="price-tab" onclick="showPrice(this, 'warga_vario150')">Warga</button>
+                            <button class="price-tab" onclick="showPrice(this, 'wisata_vario150')">Wisatawan</button>
+                        </div>
+                        
+                        <!-- Mahasiswa Price -->
+                        <div class="price-content active" id="mahasiswa_vario150">
+                            <div class="price">Rp 70.000</div>
+                            <div class="price-period">per hari (Mahasiswa)</div>
+                        </div>
+                        
+                        <!-- Warga Lokal Price -->
+                        <div class="price-content" id="warga_vario150">
+                            <div class="price">Rp 125.000</div>
+                            <div class="price-period">per hari (Warga Lokal)</div>
+                        </div>
+                        
+                        <!-- Wisatawan Price -->
+                        <div class="price-content" id="wisata_vario150">
+                            <div class="price">Rp 125.000</div>
+                            <div class="price-period">per hari (Wisatawan)</div>
+                        </div>
+                        
+                        <p class="card-text text-muted small">
+                            <i class="bi bi-check-circle-fill text-success"></i> Tenaga besar<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Premium<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Spacious
+                        </p>
+                        <button class="btn btn-pesan" onclick="pesanViaWA('Honda Vario LED OLD 125')">
+                            <i class="bi bi-whatsapp"></i> Pesan via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Honda Vario 150 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="DK 6272 IZ">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1412,7 +1787,7 @@
             </div>
 
             <!-- Honda Vario 150 (2015) -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="B 3451 UNZ">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1458,55 +1833,8 @@
                 </div>
             </div>
 
-            <!-- Honda Vario 2022 -->
-         <!--   <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
-                <div class="card motor-card">
-                    <div style="overflow: hidden; position: relative;">
-                        <span class="badge-category">Matic</span>
-                        <img src="assets/img/vario2022.png" class="card-img-top" alt="Honda Vario 2022">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Honda Vario 2022</h5>
-                        
-                        Price Tabs 
-                        <div class="price-tabs">
-                            <button class="price-tab active" onclick="showPrice(this, 'mahasiswa_vario2022')">Mahasiswa</button>
-                            <button class="price-tab" onclick="showPrice(this, 'warga_vario2022')">Warga</button>
-                            <button class="price-tab" onclick="showPrice(this, 'wisata_vario2022')">Wisatawan</button>
-                        </div>
-                        
-                         Mahasiswa Price
-                        <div class="price-content active" id="mahasiswa_vario2022">
-                            <div class="price">Rp 75.000</div>
-                            <div class="price-period">per hari (Mahasiswa)</div>
-                        </div>
-                        
-                         Warga Lokal Price 
-                        <div class="price-content" id="warga_vario2022">
-                            <div class="price">Rp 80.000</div>
-                            <div class="price-period">per hari (Warga Lokal)</div>
-                        </div> 
-                        
-                        Wisatawan Price
-                        <div class="price-content" id="wisata_vario2022">
-                            <div class="price">Rp 85.000</div>
-                            <div class="price-period">per hari (Wisatawan)</div>
-                        </div>
-                        
-                        <p class="card-text text-muted small">
-                            <i class="bi bi-check-circle-fill text-success"></i> Latest model<br>
-                            <i class="bi bi-check-circle-fill text-success"></i> Advanced tech<br>
-                            <i class="bi bi-check-circle-fill text-success"></i> Premium
-                        </p>
-                        <button class="btn btn-pesan" onclick="pesanViaWA('Honda Vario 2022')">
-                            <i class="bi bi-whatsapp"></i> Pesan via WhatsApp
-                        </button>
-                    </div>
-                </div>
-            </div> -->
-
             <!-- Honda Vario LMB -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="L 4829 MB">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1553,7 +1881,7 @@
             </div>
 
             <!-- Honda Vario Clik -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="BG 2849 ACT">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1600,7 +1928,7 @@
             </div>
 
             <!-- Honda Vario 125 Hitam -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="S 4919 JBS">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1646,55 +1974,8 @@
                 </div>
             </div>
 
-            <!-- Honda Vario 150 Hitam -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
-                <div class="card motor-card">
-                    <div style="overflow: hidden; position: relative;">
-                        <span class="badge-category">Matic</span>
-                        <img src="assets/img/vario150_hitam.png" class="card-img-top" alt="Honda Vario 150 Hitam">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Honda Vario 150 Hitam</h5>
-                        
-                        <!-- Price Tabs -->
-                        <div class="price-tabs">
-                            <button class="price-tab active" onclick="showPrice(this, 'mahasiswa_vario150hitam')">Mahasiswa</button>
-                            <button class="price-tab" onclick="showPrice(this, 'warga_vario150hitam')">Warga</button>
-                            <button class="price-tab" onclick="showPrice(this, 'wisata_vario150hitam')">Wisatawan</button>
-                        </div>
-                        
-                        <!-- Mahasiswa Price -->
-                        <div class="price-content active" id="mahasiswa_vario150hitam">
-                            <div class="price">Rp 70.000</div>
-                            <div class="price-period">per hari (Mahasiswa)</div>
-                        </div>
-                        
-                        <!-- Warga Lokal Price -->
-                        <div class="price-content" id="warga_vario150hitam">
-                            <div class="price">Rp 125.000</div>
-                            <div class="price-period">per hari (Warga Lokal)</div>
-                        </div>
-                        
-                        <!-- Wisatawan Price -->
-                        <div class="price-content" id="wisata_vario150hitam">
-                            <div class="price">Rp 125.000</div>
-                            <div class="price-period">per hari (Wisatawan)</div>
-                        </div>
-                        
-                        <p class="card-text text-muted small">
-                            <i class="bi bi-check-circle-fill text-success"></i> Premium black<br>
-                            <i class="bi bi-check-circle-fill text-success"></i> Powerful<br>
-                            <i class="bi bi-check-circle-fill text-success"></i> Stylish
-                        </p>
-                        <button class="btn btn-pesan" onclick="pesanViaWA('Honda Vario 150 Hitam')">
-                            <i class="bi bi-whatsapp"></i> Pesan via WhatsApp
-                        </button>
-                    </div>
-                </div>
-            </div>
-
             <!-- Honda Scoopy -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="N 6764 HJ">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1741,7 +2022,7 @@
             </div>
 
             <!-- Honda Scoopy 2016 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="S 2771 ABG">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1787,55 +2068,8 @@
                 </div>
             </div>
 
-            <!-- Honda Scoopy 2017 Merah -->
-          <!--  <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
-                <div class="card motor-card">
-                    <div style="overflow: hidden; position: relative;">
-                        <span class="badge-category">Matic</span>
-                        <img src="assets/img/scoopy2017_merah.png" class="card-img-top" alt="Honda Scoopy 2017 Merah">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Honda Scoopy 2017 Merah</h5>
-                        
-                         Price Tabs 
-                        <div class="price-tabs">
-                            <button class="price-tab active" onclick="showPrice(this, 'mahasiswa_scoopy2017merah')">Mahasiswa</button>
-                            <button class="price-tab" onclick="showPrice(this, 'warga_scoopy2017merah')">Warga</button>
-                            <button class="price-tab" onclick="showPrice(this, 'wisata_scoopy2017merah')">Wisatawan</button>
-                        </div>
-                        
-                         Mahasiswa Price
-                        <div class="price-content active" id="mahasiswa_scoopy2017merah">
-                            <div class="price">Rp 62.000</div>
-                            <div class="price-period">per hari (Mahasiswa)</div>
-                        </div>
-                        
-                        Warga Lokal Price 
-                        <div class="price-content" id="warga_scoopy2017merah">
-                            <div class="price">Rp 67.000</div>
-                            <div class="price-period">per hari (Warga Lokal)</div>
-                        </div>
-                        
-                         Wisatawan Price 
-                        <div class="price-content" id="wisata_scoopy2017merah">
-                            <div class="price">Rp 72.000</div>
-                            <div class="price-period">per hari (Wisatawan)</div>
-                        </div>
-                        
-                        <p class="card-text text-muted small">
-                            <i class="bi bi-check-circle-fill text-success"></i> Vibrant red<br>
-                            <i class="bi bi-check-circle-fill text-success"></i> Stylish<br>
-                            <i class="bi bi-check-circle-fill text-success"></i> Fun to ride
-                        </p>
-                        <button class="btn btn-pesan" onclick="pesanViaWA('Honda Scoopy 2017 Merah')">
-                            <i class="bi bi-whatsapp"></i> Pesan via WhatsApp
-                        </button>
-                    </div>
-                </div>
-            </div> -->
-
             <!-- Honda Scoopy 2016 Biru -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="KT 6624 AO">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1882,7 +2116,7 @@
             </div>
 
             <!-- Honda Scoopy -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="L 5210 EM">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1929,7 +2163,7 @@
             </div>
 
             <!-- Honda Scoopy -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="AE 5669 GV">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -1976,7 +2210,7 @@
             </div>
 
             <!-- Honda Spacy -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="N 2273 ACH">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -2023,7 +2257,7 @@
             </div>
 
             <!-- Yamaha NMAX 155 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="A 2373 VAT">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -2070,7 +2304,7 @@
             </div>
 
             <!-- Yamaha NMAX 2018 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="M 5867 XB">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -2117,7 +2351,54 @@
             </div>
 
             <!-- Yamaha Aerox 155 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="L 3520 FO">
+                <div class="card motor-card">
+                    <div style="overflow: hidden; position: relative;">
+                        <span class="badge-category">Matic</span>
+                        <img src="assets/img/Aerox_Abu.PNG" class="card-img-top" alt="Yamaha Aerox 155">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Yamaha Aerox 155</h5>
+                        
+                        <!-- Price Tabs -->
+                        <div class="price-tabs">
+                            <button class="price-tab active" onclick="showPrice(this, 'mahasiswa_aerox155_2')">Mahasiswa</button>
+                            <button class="price-tab" onclick="showPrice(this, 'warga_aerox155_2')">Warga</button>
+                            <button class="price-tab" onclick="showPrice(this, 'wisata_aerox155_2')">Wisatawan</button>
+                        </div>
+                        
+                        <!-- Mahasiswa Price -->
+                        <div class="price-content active" id="mahasiswa_aerox155_2">
+                            <div class="price">Rp 100.000</div>
+                            <div class="price-period">per hari (Mahasiswa)</div>
+                        </div>
+                        
+                        <!-- Warga Lokal Price -->
+                        <div class="price-content" id="warga_aerox155_2">
+                            <div class="price">Rp 150.000</div>
+                            <div class="price-period">per hari (Warga Lokal)</div>
+                        </div>
+                        
+                        <!-- Wisatawan Price -->
+                        <div class="price-content" id="wisata_aerox155_2">
+                            <div class="price">Rp 150.000</div>
+                            <div class="price-period">per hari (Wisatawan)</div>
+                        </div>
+                        
+                        <p class="card-text text-muted small">
+                            <i class="bi bi-check-circle-fill text-success"></i> Sport style<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Powerful<br>
+                            <i class="bi bi-check-circle-fill text-success"></i> Agile
+                        </p>
+                        <button class="btn btn-pesan" onclick="pesanViaWA('Yamaha Aerox 155')">
+                            <i class="bi bi-whatsapp"></i> Pesan via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yamaha Aerox 155 -->
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="L 2433 IR">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -2164,7 +2445,7 @@
             </div>
 
             <!-- Yamaha Mio 2010 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="W 2799 TN">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -2211,7 +2492,7 @@
             </div>
 
             <!-- Yamaha Mio M3 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="S 6835 LN">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -2258,7 +2539,7 @@
             </div>
 
             <!-- Yamaha Fazzio NEO -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="AG 2602 KCI">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -2305,7 +2586,7 @@
             </div>
 
             <!-- Yamaha X-Ride -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="H 4937 JK">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -2352,7 +2633,7 @@
             </div> 
 
             <!-- Yamaha Xeon Merah -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="N 2971 ECH">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -2399,7 +2680,7 @@
             </div>
 
             <!-- Yamaha Xeon GT -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="matic">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="matic" data-plat="L 2381 ZX">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Matic</span>
@@ -2446,7 +2727,7 @@
             </div>
 
             <!-- Suzuki Spin Merah -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 6481 BT">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -2494,7 +2775,7 @@
 
 
             <!-- Honda Supra X 125 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 6983 G">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -2541,7 +2822,7 @@
             </div>
 
             <!-- Honda Supra X 125R -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="M 2043 AM">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -2588,7 +2869,7 @@
             </div>
 
             <!-- Honda Supra Fit 2001 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 5819 TF">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -2635,7 +2916,7 @@
             </div>
 
             <!-- Honda Supra Fit -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 2695 EBL">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -2682,7 +2963,7 @@
             </div>
 
             <!-- Honda Supra 2000 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="L 2776 NL">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -2729,7 +3010,7 @@
             </div>
 
             <!-- Honda Supra X 2000 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="L2494 RU">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -2776,7 +3057,7 @@
             </div>
 
             <!-- Honda Blade -->
-           <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+           <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 2771 BAA">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -2823,7 +3104,7 @@
             </div> 
 
             <!-- Honda Kharisma -->
-           <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+           <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 6503 LO">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -2870,7 +3151,7 @@
             </div> 
 
             <!-- Honda Astrea -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 6184 CO">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -2917,7 +3198,7 @@
             </div>
 
             <!-- Yamaha Jupiter Z1 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="AG 5828 OAJ">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -2964,7 +3245,7 @@
             </div>
 
             <!-- Yamaha Jupiter Biru -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 5953 JU">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -3011,7 +3292,7 @@
             </div>
 
             <!-- Yamaha Jupiter Hijau -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 6915 KU">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -3059,7 +3340,7 @@
  
 
             <!-- Yamaha Vega ZR -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 2210 XY">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -3106,7 +3387,7 @@
             </div>
 
             <!-- Yamaha Vega ZR Biru -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 3672 CO">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -3153,7 +3434,7 @@
             </div>
 
             <!-- Yamaha Vega ZR Fiat -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="S 6447 YL">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -3200,7 +3481,7 @@
             </div>
 
             <!-- Yamaha Vega Merah Putih -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="N 5032 LO">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -3247,7 +3528,7 @@
             </div>
 
             <!-- Suzuki Smash Titan -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="bebek" data-plat="S 3801 TD">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Bebek</span>
@@ -3294,7 +3575,7 @@
             </div>
 
             <!-- Honda CRF -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="sport">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="sport" data-plat="K 6575 CG">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Sport</span>
@@ -3341,7 +3622,7 @@
             </div>
 
             <!-- Honda CRF -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="sport">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="sport" data-plat="P 2711 DT">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Sport</span>
@@ -3388,7 +3669,7 @@
             </div>
 
             <!-- Honda CB150R -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="sport">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="sport" data-plat="P 2741 DT">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Sport</span>
@@ -3435,7 +3716,7 @@
             </div>
 
             <!-- Yamaha R15 -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="sport">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="sport" data-plat="N 5124 RM">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Sport</span>
@@ -3469,7 +3750,7 @@
             </div>
 
             <!-- ZX250R -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="sport">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="sport" data-plat="M 3078 CH">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Sport</span>
@@ -3503,7 +3784,7 @@
             </div>
 
             <!-- Suzuki Satria FU Putih -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="sport">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="sport" data-plat="S 3646 YJ">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Sport</span>
@@ -3550,7 +3831,7 @@
             </div>
 
             <!-- Suzuki Satria FU -->
-            <div class="col-md-6 col-lg-4 motor-item" data-category="sport">
+            <div class="col-md-6 col-lg-4 motor-item" data-category="sport" data-plat="L 5272 IK">
                 <div class="card motor-card">
                     <div style="overflow: hidden; position: relative;">
                         <span class="badge-category">Sport</span>
@@ -3648,11 +3929,100 @@
         </a>
     </div>
     
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="modal-content-wrapper">
+            <div class="modal-image-container">
+                <img id="modalImage" class="modal-image" src="" alt="Motor">
+                <div class="modal-info">
+                    <h3 class="modal-title" id="modalTitle"></h3>
+                    <div>
+                        <span class="modal-plat" id="modalPlat">
+                            <i class="bi bi-credit-card-2-front"></i>
+                            <span id="modalPlatNumber"></span>
+                        </span>
+                        <span class="modal-category" id="modalCategory"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Custom JavaScript -->
     <script>
+        // Function untuk membuka modal dengan gambar dan info motor
+        function openImageModal(motorName, imageSrc, category, platNomor) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalPlatNumber = document.getElementById('modalPlatNumber');
+            const modalCategory = document.getElementById('modalCategory');
+            
+            // Set content
+            modalImage.src = imageSrc;
+            modalTitle.textContent = motorName;
+            modalPlatNumber.textContent = platNomor || 'N XXXX XXX';
+            modalCategory.textContent = category;
+            
+            // Show modal
+            modal.style.display = 'block';
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Function untuk menutup modal
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // Add click event to all motor images
+        document.addEventListener('DOMContentLoaded', function() {
+            const motorItems = document.querySelectorAll('.motor-item');
+            
+            motorItems.forEach(item => {
+                const img = item.querySelector('img');
+                const title = item.querySelector('.card-title');
+                const badge = item.querySelector('.badge-category');
+                const platNomor = item.getAttribute('data-plat');
+                
+                if (img && title && badge) {
+                    img.style.cursor = 'pointer';
+                    img.addEventListener('click', function() {
+                        openImageModal(
+                            title.textContent.trim(),
+                            img.src,
+                            badge.textContent.trim(),
+                            platNomor
+                        );
+                    });
+                }
+            });
+        });
+        
         // Language switcher function
         function switchLanguage(lang) {
             // Save to localStorage

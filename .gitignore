@@ -1,0 +1,38 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary Files
+*.tmp
+*.temp
+*~
+
+# Backup Files
+*.bak
+*.backup
+
+# Log Files
+*.log
+
+# Node modules (jika kedepannya ada build process)
+node_modules/
+npm-debug.log*
+
+# Environment variables (jika ada)
+.env
+.env.local
+
+# Build output (jika kedepannya ada)
+dist/
+build/
+
+# Misc
+*.swp
+*.swo
