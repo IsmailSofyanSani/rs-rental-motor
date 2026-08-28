@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO Meta Tags -->
+    <title>FAQ - Pertanyaan yang Sering Diajukan | RS Rental Motor Malang</title>
+    <meta name="description" content="Temukan jawaban atas berbagai pertanyaan umum seputar layanan rental motor di Malang. Cara booking, fasilitas, antar jemput, tarif mahasiswa, dan banyak lagi.">
+    <meta name="keywords" content="faq rental motor malang, pertanyaan rental motor, cara booking motor malang, tarif mahasiswa, antar jemput motor, syarat sewa motor">
+    <meta name="author" content="RS Rental Motor Malang">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://rsrentalmotormalang.com/faq.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FAQ - RS Rental Motor Malang">
+    <meta property="og:description" content="Temukan jawaban atas berbagai pertanyaan umum seputar layanan rental motor di Malang.">
+    <meta property="og:url" content="https://rsrentalmotormalang.com/faq.html">
+    <meta property="og:image" content="https://rsrentalmotormalang.com/assets/img/Hero.png">
+    <meta property="og:locale" content="id_ID">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FAQ - RS Rental Motor Malang">
+    <meta name="twitter:description" content="Temukan jawaban atas berbagai pertanyaan umum seputar layanan rental motor di Malang.">
+    <meta name="twitter:image" content="https://rsrentalmotormalang.com/assets/img/Hero.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co.com/ZzjVpQth/Logo-Pavicon.png">
+    <link rel="shortcut icon" type="image/png" href="https://i.ibb.co.com/ZzjVpQth/Logo-Pavicon.png">
+    <link rel="apple-touch-icon" href="https://i.ibb.co.com/ZzjVpQth/Logo-Pavicon.png">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --dark-color: #1e293b;
+            --light-bg: #f8fafc;
+            --text-body: #475569;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-body);
+            line-height: 1.6;
+            background-color: var(--white);
+            padding-top: 76px;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--dark-color) !important;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+            margin-right: 1.5rem;
+            white-space: nowrap;
+        }
+        
+        .navbar-brand:hover {
+            transform: translateY(-2px);
+        }
+        
+        .navbar-brand i {
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .navbar-brand span.text-primary {
+            color: var(--primary-color) !important;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-light) !important;
+            padding: 0.5rem 0.875rem !important;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            position: relative;
+            white-space: nowrap;
+            font-size: 1.25rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+        }
+        
+        .navbar-nav {
+            gap: 0.25rem;
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+            margin-left: 1rem;
+        }
+        
+        .language-switcher .btn {
+            padding: 0.4rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            background: white;
+            color: var(--text-light);
+        }
+        
+        .language-switcher .btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .language-switcher .btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(30, 41, 59, 0.75)), 
+                        url('assets/img/Hero.png') center center / cover no-repeat fixed;
+            color: white;
+            padding: 80px 0 60px;
+            margin-bottom: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(102, 126, 234, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at bottom left, rgba(118, 75, 162, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+        
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb-item a:hover {
+            color: white;
+        }
+        
+        .breadcrumb-item.active {
+            color: white;
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* FAQ Section */
+        .faq-content {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, white 0%, var(--light-bg) 100%);
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .section-intro h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+        
+        .section-intro p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+        }
+        
+        /* Category Pills */
+        .category-pills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-pill {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            background: white;
+            border: 2px solid var(--border-color);
+            color: var(--text-body);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-pill:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .category-pill.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .category-pill i {
+            font-size: 1.125rem;
+        }
+        
+        /* Accordion Styles */
+        .accordion {
+            --bs-accordion-border-color: var(--border-color);
+            --bs-accordion-border-radius: 16px;
+        }
+        
+        .accordion-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 16px !important;
+            overflow: hidden;
+            background: white;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .accordion-button {
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--dark-color);
+            padding: 1.5rem;
+            background: white;
+            border: none;
+            box-shadow: none !important;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            color: var(--primary-color);
+        }
+        
+        .accordion-button::after {
+            background-size: 1.25rem;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+        
+        .accordion-body {
+            padding: 1.5rem;
+            color: var(--text-body);
+            font-size: 1rem;
+            line-height: 1.7;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .accordion-body strong {
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+        
+        /* Help Banner */
+        .help-banner {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 60px 0;
+            margin-top: 60px;
+            border-radius: 24px;
+            text-align: center;
+        }
+        
+        .help-banner h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .help-banner p {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+        
+        .help-banner .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 12px;
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .help-banner .btn:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer h5 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+        
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer ul li a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .footer-bottom p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-brand {
+                font-size: 1.15rem;
+                margin-right: 1rem;
+            }
+            
+            .navbar-brand i {
+                font-size: 1.35rem;
+            }
+            
+            .nav-link {
+                font-size: 1.1rem;
+                padding: 0.4rem 0.75rem !important;
+            }
+            
+            .language-switcher {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.25rem;
+            }
+            
+            .page-header p {
+                font-size: 1.125rem;
+            }
+            
+            .section-intro h2 {
+                font-size: 2rem;
+            }
+            
+            .help-banner h3 {
+                font-size: 1.75rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .navbar {
+                padding: 0.75rem 0;
+            }
+            
+            .navbar-brand {
+                font-size: 1rem;
+            }
+            
+            .navbar-brand i {
+                font-size: 1.25rem;
+            }
+            
+            .nav-link {
+                font-size: 1rem;
+            }
+            
+            .page-header {
+                padding: 60px 0 40px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .faq-content {
+                padding: 60px 0;
+            }
+            
+            .section-intro h2 {
+                font-size: 1.75rem;
+            }
+            
+            .section-intro p {
+                font-size: 1rem;
+            }
+            
+            .category-pills {
+                gap: 0.5rem;
+            }
+            
+            .category-pill {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+            
+            .accordion-button {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+            
+            .accordion-body {
+                padding: 1rem;
+                font-size: 0.9375rem;
+            }
+            
+            .help-banner {
+                padding: 40px 20px;
+            }
+            
+            .help-banner h3 {
+                font-size: 1.5rem;
+            }
+            
+            .help-banner p {
+                font-size: 1rem;
+            }
+            
+            .help-banner .btn {
+                padding: 0.875rem 1.75rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-scooter"></i>
+                <span>RS Rental Motor <span class="text-primary">Malang</span></span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-lang-id="Beranda" data-lang-en="Home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="armada.html" data-lang-id="Armada Kami" data-lang-en="Our Fleet">Armada Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimoni.html" data-lang-id="Testimoni" data-lang-en="Testimonials">Testimoni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentang.html" data-lang-id="Tentang Kami" data-lang-en="About Us">Tentang Kami</a>
+                    </li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="btn btn-sm active" onclick="switchLanguage('id')" id="btn-id">ID</button>
+                    <button class="btn btn-sm" onclick="switchLanguage('en')" id="btn-en">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 data-lang-id="Pertanyaan yang Sering Diajukan" data-lang-en="Frequently Asked Questions">Pertanyaan yang Sering Diajukan</h1>
+            <p data-lang-id="Temukan jawaban atas berbagai pertanyaan umum seputar layanan sewa motor kami di Malang" data-lang-en="Find answers to common questions about our motorcycle rental service in Malang">Temukan jawaban atas berbagai pertanyaan umum seputar layanan sewa motor kami di Malang</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="index.html" data-lang-id="Beranda" data-lang-en="Home">Beranda</a>
+                    </li>
+                    <li class="breadcrumb-item active">FAQ</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    
+    <!-- FAQ Content -->
+    <section class="faq-content">
+        <div class="container">
+            <div class="section-intro">
+                <h2 data-lang-id="Ada Pertanyaan?" data-lang-en="Have Questions?">Ada Pertanyaan?</h2>
+                <p data-lang-id="Kami telah mengumpulkan jawaban untuk pertanyaan yang paling sering diajukan oleh customer kami. Jika masih ada yang belum jelas, jangan ragu untuk menghubungi kami!" data-lang-en="We've compiled answers to the most frequently asked questions by our customers. If you still have questions, don't hesitate to contact us!">Kami telah mengumpulkan jawaban untuk pertanyaan yang paling sering diajukan oleh customer kami. Jika masih ada yang belum jelas, jangan ragu untuk menghubungi kami!</p>
+            </div>
+            
+            <!-- Category Pills -->
+            <div class="category-pills">
+                <div class="category-pill active" onclick="filterFAQ('all')">
+                    <i class="bi bi-grid-3x3-gap"></i>
+                    <span data-lang-id="Semua" data-lang-en="All">Semua</span>
+                </div>
+                <div class="category-pill" onclick="filterFAQ('booking')">
+                    <i class="bi bi-calendar-check"></i>
+                    <span data-lang-id="Pemesanan" data-lang-en="Booking">Pemesanan</span>
+                </div>
+                <div class="category-pill" onclick="filterFAQ('facilities')">
+                    <i class="bi bi-star"></i>
+                    <span data-lang-id="Fasilitas" data-lang-en="Facilities">Fasilitas</span>
+                </div>
+                <div class="category-pill" onclick="filterFAQ('pricing')">
+                    <i class="bi bi-wallet2"></i>
+                    <span data-lang-id="Harga & Tarif" data-lang-en="Pricing">Harga & Tarif</span>
+                </div>
+            </div>
+            
+            <!-- FAQ Accordion -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item" data-category="booking">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <span data-lang-id="Bagaimana cara booking sewa motor?" data-lang-en="How to book a motorcycle rental?">Bagaimana cara booking sewa motor?</span>
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <span data-lang-id="Pemesanan dapat dilakukan melalui WhatsApp dengan menghubungi admin kami. Untuk pembayaran, kami menerima Cash, Transfer Bank atau QRIS. Untuk booking, cukup hubungi admin, pembayaran saat motor diantar/diambil. Sangat mudah dan fleksibel!" data-lang-en="Bookings can be made via WhatsApp by contacting our admin. For payment, we accept Cash, Bank Transfer, or QRIS. For booking, just contact the admin, payment when the motorcycle is delivered/picked up. Very easy and flexible!">Pemesanan dapat dilakukan melalui WhatsApp dengan menghubungi admin kami. Untuk pembayaran, kami menerima <strong>Cash</strong>, <strong>Transfer Bank</strong> atau <strong>QRIS</strong>. Untuk booking, cukup hubungi admin, pembayaran saat motor diantar/diambil. Sangat mudah dan fleksibel!</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item" data-category="facilities">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    <span data-lang-id="Apa saja fasilitas yang didapatkan?" data-lang-en="What facilities are provided?">Apa saja fasilitas yang didapatkan?</span>
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <span data-lang-id="Setiap penyewaan motor mendapatkan helm dan jas hujan (selama persediaan masih ada)." data-lang-en="Every motorcycle rental includes a helmet and raincoat (while supplies last).">Setiap penyewaan motor mendapatkan <strong>helm</strong> dan <strong>jas hujan</strong> (selama persediaan masih ada).</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item" data-category="facilities">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    <span data-lang-id="Apakah ada fasilitas antar jemput motor?" data-lang-en="Is there a pick-up and delivery service?">Apakah ada fasilitas antar jemput motor?</span>
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <span data-lang-id="Ya, kami menyediakan jasa antar jemput armada langsung ke lokasi Anda (Stasiun Malang, hotel, kost, atau penginapan) di area Malang & Batu. Silakan diskusikan kebutuhan antar jemput dengan admin kami saat proses booking untuk penyesuaian tarif kurir jika berada di luar zona jangkauan gratis kami." data-lang-en="Yes, we provide pick-up and delivery service directly to your location (Malang Station, hotel, boarding house, or accommodation) in Malang & Batu area. Please discuss your pick-up needs with our admin during the booking process for courier rate adjustments if outside our free coverage zone.">Ya, kami menyediakan jasa antar jemput armada langsung ke lokasi Anda <strong>(Stasiun Malang, hotel, kost, atau penginapan) di area Malang & Batu</strong>. Silakan diskusikan kebutuhan antar jemput dengan admin kami saat proses booking untuk penyesuaian tarif kurir jika berada di luar zona jangkauan gratis kami.</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item" data-category="pricing">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    <span data-lang-id="Apakah KTM wajib digunakan untuk tarif mahasiswa?" data-lang-en="Is a student card required for student rates?">Apakah KTM wajib digunakan untuk tarif mahasiswa?</span>
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <span data-lang-id="Benar. Untuk mendapatkan tarif khusus Mahasiswa, Anda wajib melampirkan foto KTM (Kartu Tanda Mahasiswa) aktif area Malang serta bukti Infokhs, Siakad/Siam aktif. Jika tidak, maka akan dikenakan tarif umum (Wisatawan/Warga)." data-lang-en="Yes. To get the special Student rate, you must attach a photo of your active Student Card (KTM) in the Malang area and proof of active Infokhs, Siakad/Siam. Otherwise, general rates (Tourist/Resident) will apply.">Benar. Untuk mendapatkan tarif khusus "Mahasiswa", Anda wajib melampirkan foto <strong>KTM (Kartu Tanda Mahasiswa) aktif area Malang serta bukti Infokhs, Siakad/Siam aktif.</strong> Jika tidak, maka akan dikenakan tarif umum (Wisatawan/Warga).</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 5 -->
+                        <div class="accordion-item" data-category="facilities">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    <span data-lang-id="Bagaimana jika motor mengalami kerusakan?" data-lang-en="What if the motorcycle breaks down?">Bagaimana jika motor mengalami kerusakan?</span>
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <span data-lang-id="Untuk kerusakan ringan akibat pemakaian normal, kami yang akan menanggung. Namun untuk kerusakan berat atau kehilangan akibat kelalaian, penyewa bertanggung jawab sesuai kesepakatan." data-lang-en="For minor damage due to normal use, we will cover it. However, for major damage or loss due to negligence, the renter is responsible according to the agreement.">Untuk kerusakan ringan akibat pemakaian normal, kami yang akan menanggung. Namun untuk kerusakan berat atau kehilangan akibat kelalaian, penyewa bertanggung jawab sesuai kesepakatan.</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 6 - Additional -->
+                        <div class="accordion-item" data-category="booking">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    <span data-lang-id="Berapa lama minimal waktu sewa motor?" data-lang-en="What is the minimum rental period?">Berapa lama minimal waktu sewa motor?</span>
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <span data-lang-id="Minimal penyewaan adalah 1 hari (24 jam). Kami juga menyediakan paket mingguan dan bulanan dengan harga yang lebih hemat." data-lang-en="The minimum rental period is 1 day (24 hours). We also offer weekly and monthly packages at more affordable rates.">Minimal penyewaan adalah <strong>1 hari (24 jam)</strong>. Kami juga menyediakan paket mingguan dan bulanan dengan harga yang lebih hemat.</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 7 - Additional -->
+                        <div class="accordion-item" data-category="booking">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    <span data-lang-id="Apakah bisa booking jauh-jauh hari?" data-lang-en="Can I book in advance?">Apakah bisa booking jauh-jauh hari?</span>
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <span data-lang-id="Ya, sangat bisa! Kami merekomendasikan untuk booking lebih awal, terutama saat musim liburan atau weekend untuk memastikan ketersediaan motor yang Anda inginkan." data-lang-en="Yes, absolutely! We recommend booking early, especially during holidays or weekends to ensure availability of your preferred motorcycle.">Ya, sangat bisa! Kami merekomendasikan untuk booking lebih awal, terutama saat musim liburan atau weekend untuk memastikan ketersediaan motor yang Anda inginkan.</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 8 - Additional -->
+                        <div class="accordion-item" data-category="pricing">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                    <span data-lang-id="Apakah bensin sudah termasuk dalam harga sewa?" data-lang-en="Is fuel included in the rental price?">Apakah bensin sudah termasuk dalam harga sewa?</span>
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <span data-lang-id="Motor akan diserahkan dalam kondisi bensin 1 liter. Saat pengembalian, Anda cukup mengembalikan sesuai dengan kondisi bensin awal." data-lang-en="The motorcycle will be delivered with a 1 liter. Upon return, you just need to return it with a 1 liter.">Motor akan diserahkan dalam kondisi <strong>1 liter</strong>. Saat pengembalian, Anda cukup mengembalikan sesuai dengan kondisi bensin awal.</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 9 - Additional -->
+                        <div class="accordion-item" data-category="facilities">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                                    <span data-lang-id="Apakah tersedia motor automatic dan manual?" data-lang-en="Are automatic and manual motorcycles available?">Apakah tersedia motor automatic dan manual?</span>
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <span data-lang-id="Ya, kami menyediakan berbagai jenis motor baik automatic (matic) seperti Beat, Scoopy, Vario, Nmax, Aerox maupun manual seperti CRF dan CB. Anda bisa memilih sesuai kebutuhan." data-lang-en="Yes, we provide various types of motorcycles, both automatic (matic) like Beat, Scoopy, Vario, Nmax, Aerox and manual like CRF and CB. You can choose according to your needs.">Ya, kami menyediakan berbagai jenis motor baik <strong>automatic (matic)</strong> seperti Beat, Scoopy, Vario, Nmax, Aerox maupun <strong>manual</strong> seperti CRF dan CB. Anda bisa memilih sesuai kebutuhan.</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 10 - Additional -->
+                        <div class="accordion-item" data-category="pricing">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+                                    <span data-lang-id="Apakah ada deposit atau jaminan?" data-lang-en="Is there a deposit or guarantee required?">Apakah ada deposit atau jaminan?</span>
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <span data-lang-id="Ya, untuk jaminan kami meminta KTP/SIM asli atau dokumen identitas valid lainnya yang akan dikembalikan saat motor dikembalikan. Tidak ada deposit uang." data-lang-en="Yes, as a guarantee we require an original ID card/driver's license or other valid identification which will be returned when the motorcycle is returned. No cash deposit required.">Ya, untuk jaminan kami meminta <strong>KTP/SIM asli</strong> atau dokumen identitas valid lainnya yang akan dikembalikan saat motor dikembalikan. Tidak ada deposit uang.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Help Banner -->
+            <div class="help-banner">
+                <div class="container">
+                    <h3 data-lang-id="Masih Ada Pertanyaan Lain?" data-lang-en="Still Have Other Questions?">Masih Ada Pertanyaan Lain?</h3>
+                    <p data-lang-id="Tim kami siap membantu Anda dengan senang hati. Hubungi kami melalui WhatsApp untuk pertanyaan lebih lanjut." data-lang-en="Our team is happy to help you. Contact us via WhatsApp for further questions.">Tim kami siap membantu Anda dengan senang hati. Hubungi kami melalui WhatsApp untuk pertanyaan lebih lanjut.</p>
+                    <a href="https://wa.me/6285194553402?text=Halo%20RS%20Rental%20Motor%20Malang,%20saya%20ingin%20bertanya" class="btn" target="_blank">
+                        <i class="bi bi-whatsapp"></i>
+                        <span data-lang-id="Hubungi Kami" data-lang-en="Contact Us">Hubungi Kami</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 data-lang-id="RS Rental Motor Malang" data-lang-en="RS Rental Motor Malang">RS Rental Motor Malang</h5>
+                    <p data-lang-id="Solusi terpercaya untuk kebutuhan rental motor di Malang. Melayani mahasiswa, wisatawan, dan masyarakat umum dengan harga terjangkau." data-lang-en="Trusted solution for motorcycle rental needs in Malang. Serving students, tourists, and the general public with affordable prices.">Solusi terpercaya untuk kebutuhan rental motor di Malang. Melayani mahasiswa, wisatawan, dan masyarakat umum dengan harga terjangkau.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/6285194553402" target="_blank" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rentmotordinoyo_/" target="_blank" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/rentmotor.dinoyo/" target="_blank" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@rentmotordinoyo" target="_blank"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+                    <h5 data-lang-id="Tautan Cepat" data-lang-en="Quick Links">Tautan Cepat</h5>
+                    <ul>
+                        <li><a href="index.html" data-lang-id="Beranda" data-lang-en="Home">Beranda</a></li>
+                        <li><a href="armada.html" data-lang-id="Armada Kami" data-lang-en="Our Fleet">Armada Kami</a></li>
+                        <li><a href="testimoni.html" data-lang-id="Testimoni" data-lang-en="Testimonials">Testimoni</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="tentang.html" data-lang-id="Tentang Kami" data-lang-en="About Us">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4 mb-lg-0">
+                    <h5 data-lang-id="Layanan" data-lang-en="Services">Layanan</h5>
+                    <ul>
+                        <li><a href="armada.html" data-lang-id="Rental Harian" data-lang-en="Daily Rental">Rental Harian</a></li>
+                        <li><a href="armada.html" data-lang-id="Rental Mingguan" data-lang-en="Weekly Rental">Rental Mingguan</a></li>
+                        <li><a href="armada.html" data-lang-id="Rental Bulanan" data-lang-en="Monthly Rental">Rental Bulanan</a></li>
+                        <li><a href="index.html#lokasi" data-lang-id="Antar Jemput" data-lang-en="Pick-up & Delivery">Antar Jemput</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <h5 data-lang-id="Kontak" data-lang-en="Contact">Kontak</h5>
+                    <ul>
+                        <li>
+                            <a href="https://wa.me/6285194553402" target="_blank">
+                                <i class="bi bi-whatsapp"></i>
+                                <span>+62 851-9455-3402</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://maps.app.goo.gl/m14NYrQjK9juLWe18" target="_blank">
+                                <i class="bi bi-geo-alt"></i>
+                                <span>Jl. Kertoraharjo No.21, Kel. Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:rentmotordinoyo@gmail.com">
+                                <i class="bi bi-envelope"></i>
+                                <span>rentmotordinoyo@gmail.com</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 RS Rental Motor Malang | <span data-lang-id="Partner Perjalanan" data-lang-en="Travel Partner">Partner Perjalanan</span></p>
+                <p data-lang-id="All rights reserved | Design By IYAN." data-lang-en="All rights reserved | Design By IYAN.">All rights reserved | Design By IYAN.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Language Switcher & Filter Script -->
+    <script>
+        let currentLanguage = 'id'; // Default language
+        
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update button states
+            document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            
+            // Update all elements with data-lang attributes
+            const elements = document.querySelectorAll('[data-lang-id][data-lang-en]');
+            elements.forEach(element => {
+                const text = lang === 'id' ? element.getAttribute('data-lang-id') : element.getAttribute('data-lang-en');
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+            
+            // Save preference to localStorage
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Category filter function
+        function filterFAQ(category) {
+            const pills = document.querySelectorAll('.category-pill');
+            const items = document.querySelectorAll('.accordion-item');
+            
+            // Update active pill
+            pills.forEach(pill => {
+                pill.classList.remove('active');
+            });
+            event.target.closest('.category-pill').classList.add('active');
+            
+            // Filter FAQ items
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+            
+            // Close all accordions when filtering
+            const collapses = document.querySelectorAll('.accordion-collapse');
+            collapses.forEach(collapse => {
+                if (collapse.classList.contains('show')) {
+                    bootstrap.Collapse.getInstance(collapse)?.hide();
+                }
+            });
+        }
+        
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'id';
+            switchLanguage(savedLang);
+        });
+    </script>
+    
+</body>
+</html>
