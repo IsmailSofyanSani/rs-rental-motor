@@ -94,13 +94,14 @@
         
         .navbar-brand {
             font-weight: 800;
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             color: var(--dark-color) !important;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             transition: transform 0.3s ease;
-            margin-right: 3rem;
+            margin-right: 1.5rem;
+            white-space: nowrap;
         }
         
         .navbar-brand:hover {
@@ -108,21 +109,47 @@
         }
         
         .navbar-brand i {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
         }
         
         .nav-link {
             font-weight: 500;
             color: var(--text-light) !important;
-            padding: 0.625rem 1.25rem !important;
+            padding: 0.5rem 0.875rem !important;
             transition: all 0.3s ease;
             position: relative;
             font-size: 0.9375rem;
+            white-space: nowrap;
         }
         
         .nav-link:hover,
         .nav-link.active {
             color: var(--primary-color) !important;
+        }
+        
+        /* Navbar WhatsApp Button */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+            color: white !important;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+        
+        .btn-whatsapp i {
+            font-size: 1rem;
         }
         
         /* Page Header - Ultra Premium */
@@ -833,21 +860,21 @@
         .language-switcher {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.25rem;
             background: var(--light-bg);
-            padding: 0.375rem 0.5rem;
-            border-radius: 8px;
+            padding: 0.25rem 0.375rem;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
         }
         
         .lang-btn {
-            padding: 0.375rem 0.75rem;
+            padding: 0.25rem 0.625rem;
             border: none;
             background: transparent;
             color: var(--text-light);
             font-weight: 600;
-            font-size: 0.875rem;
-            border-radius: 6px;
+            font-size: 0.8125rem;
+            border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s;
             text-transform: uppercase;
@@ -916,10 +943,10 @@
     <div class="page-header">
         <div class="container">
             <div class="text-center">
-                <h1><i class="bi bi-grid-3x3-gap-fill"></i> Katalog Armada Lengkap</h1>
-                <p>Temukan berbagai pilihan motor terawat untuk mengelilingi Malang dengan aman dan nyaman.</p>
+                <h1><i class="bi bi-grid-3x3-gap-fill"></i> <span data-lang-id="Katalog Armada Lengkap" data-lang-en="Complete Fleet Catalog">Katalog Armada Lengkap</span></h1>
+                <p data-lang-id="Temukan berbagai pilihan motor terawat untuk mengelilingi Malang dengan aman dan nyaman." data-lang-en="Find various well-maintained motorcycle options to explore Malang safely and comfortably.">Temukan berbagai pilihan motor terawat untuk mengelilingi Malang dengan aman dan nyaman.</p>
                 <a href="index.html" class="btn-back mt-3">
-                    <i class="bi bi-arrow-left"></i> Kembali ke Beranda
+                    <i class="bi bi-arrow-left"></i> <span data-lang-id="Kembali ke Beranda" data-lang-en="Back to Home">Kembali ke Beranda</span>
                 </a>
             </div>
         </div>
@@ -928,11 +955,11 @@
     <!-- Filter Section -->
     <div class="container">
         <div class="filter-section text-center">
-            <h5 class="mb-3">Filter Berdasarkan Kategori:</h5>
-            <button class="filter-btn active" onclick="filterMotor('all')">Semua Motor</button>
-            <button class="filter-btn" onclick="filterMotor('matic')">Motor Matic</button>
-            <button class="filter-btn" onclick="filterMotor('bebek')">Motor Bebek</button>
-            <button class="filter-btn" onclick="filterMotor('sport')">Motor Sport</button>
+            <h5 class="mb-3" data-lang-id="Filter Berdasarkan Kategori:" data-lang-en="Filter by Category:">Filter Berdasarkan Kategori:</h5>
+            <button class="filter-btn active" onclick="filterMotor('all')" data-lang-id="Semua Motor" data-lang-en="All Motorcycles">Semua Motor</button>
+            <button class="filter-btn" onclick="filterMotor('matic')" data-lang-id="Motor Matic" data-lang-en="Automatic Scooters">Motor Matic</button>
+            <button class="filter-btn" onclick="filterMotor('bebek')" data-lang-id="Motor Bebek" data-lang-en="Underbone Motorcycles">Motor Bebek</button>
+            <button class="filter-btn" onclick="filterMotor('sport')" data-lang-id="Motor Sport" data-lang-en="Sport Motorcycles">Motor Sport</button>
         </div>
     </div>
     
@@ -3886,10 +3913,10 @@
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <h5><i class="bi bi-motorcycle"></i> RS Rental Motor Malang</h5>
-                    <p>Rental motor terpercaya di Malang dengan pelayanan terbaik dan harga terjangkau. Siap antar motor ke lokasi Anda!</p>
+                    <p data-lang-id="Rental motor terpercaya di Malang dengan pelayanan terbaik dan harga terjangkau. Siap antar motor ke lokasi Anda!" data-lang-en="Trusted motorcycle rental in Malang with the best service and affordable prices. Ready to deliver motorcycles to your location!">Rental motor terpercaya di Malang dengan pelayanan terbaik dan harga terjangkau. Siap antar motor ke lokasi Anda!</p>
                 </div>
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h5>Kontak Kami</h5>
+                    <h5 data-lang-id="Kontak Kami" data-lang-en="Contact Us">Kontak Kami</h5>
                     <div class="contact-info">
                         <p>
                             <i class="bi bi-whatsapp"></i>
@@ -3906,18 +3933,18 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <h5>Jam Operasional</h5>
+                    <h5 data-lang-id="Jam Operasional" data-lang-en="Operating Hours">Jam Operasional</h5>
                     <p>
-                        <i class="bi bi-clock-fill"></i> Setiap Hari<br>
+                        <i class="bi bi-clock-fill"></i> <span data-lang-id="Setiap Hari" data-lang-en="Every Day">Setiap Hari</span><br>
                         09:00 - 19:00 WIB
                     </p>
                     <p class="mt-3">
-                        <strong>Fast Respon via WhatsApp</strong>
+                        <strong data-lang-id="Fast Respon via WhatsApp" data-lang-en="Fast Response via WhatsApp">Fast Respon via WhatsApp</strong>
                     </p>
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2026 RS Rental Motor Malang | Partner Perjalanan.</p>
+                <p data-lang-id="© 2026 RS Rental Motor Malang | Partner Perjalanan." data-lang-en="© 2026 RS Rental Motor Malang | Your Travel Partner.">© 2026 RS Rental Motor Malang | Partner Perjalanan.</p>
                 <p>All rights reserved | Design By IYAN.</p>
             </div>
         </div>
@@ -4039,41 +4066,103 @@
                 const enText = element.getAttribute('data-lang-en');
                 
                 if (lang === 'id') {
-                    element.innerHTML = idText;
+                    element.textContent = idText;
                 } else {
-                    element.innerHTML = enText;
+                    element.textContent = enText;
                 }
             });
             
-            // Update elements with data-translate-key (from translations in parent page)
+            // Comprehensive translations object
             const translations = {
                 id: {
                     'contact_admin': 'Hubungi Admin',
                     'student': 'Mahasiswa',
-                    'local': 'Warga Lokal',
+                    'local': 'Warga',
                     'tourist': 'Wisatawan',
-                    'per_day': 'per hari'
+                    'per_day': 'per hari',
+                    'order_whatsapp': 'Pesan via WhatsApp',
+                    // Price periods
+                    'student_price': 'Mahasiswa',
+                    'local_price': 'Warga Lokal',
+                    'tourist_price': 'Wisatawan',
+                    // Features
+                    'agile_nimble': 'Gesit & lincah',
+                    'city_tour': 'Cocok city tour',
+                    'fuel_efficient': 'Hemat bensin',
+                    'comfortable': 'Nyaman',
+                    'economical': 'Ekonomis',
+                    'reliable': 'Handal',
+                    'powerful': 'Bertenaga',
+                    'stylish': 'Bergaya',
+                    'premium': 'Premium',
+                    'modern': 'Modern',
+                    'elegant': 'Elegan',
+                    'efficient': 'Efisien'
                 },
                 en: {
                     'contact_admin': 'Contact Admin',
                     'student': 'Student',
                     'local': 'Local',
                     'tourist': 'Tourist',
-                    'per_day': 'per day'
+                    'per_day': 'per day',
+                    'order_whatsapp': 'Order via WhatsApp',
+                    // Price periods
+                    'student_price': 'Student',
+                    'local_price': 'Local Resident',
+                    'tourist_price': 'Tourist',
+                    // Features
+                    'agile_nimble': 'Agile & nimble',
+                    'city_tour': 'Perfect for city tour',
+                    'fuel_efficient': 'Fuel efficient',
+                    'comfortable': 'Comfortable',
+                    'economical': 'Economical',
+                    'reliable': 'Reliable',
+                    'powerful': 'Powerful',
+                    'stylish': 'Stylish',
+                    'premium': 'Premium',
+                    'modern': 'Modern',
+                    'elegant': 'Elegant',
+                    'efficient': 'Efficient'
                 }
             };
             
+            // Update price tabs
+            document.querySelectorAll('.price-tab').forEach(tab => {
+                const text = tab.textContent.trim();
+                if (text === 'Mahasiswa' || text === 'Student') {
+                    tab.textContent = translations[lang]['student_price'];
+                } else if (text === 'Warga' || text === 'Local') {
+                    tab.textContent = translations[lang]['local'];
+                } else if (text === 'Wisatawan' || text === 'Tourist') {
+                    tab.textContent = translations[lang]['tourist_price'];
+                }
+            });
+            
+            // Update price periods
+            document.querySelectorAll('.price-period').forEach(period => {
+                const currentText = period.textContent;
+                if (currentText.includes('Mahasiswa') || currentText.includes('Student')) {
+                    period.textContent = `${translations[lang]['per_day']} (${translations[lang]['student_price']})`;
+                } else if (currentText.includes('Warga') || currentText.includes('Local')) {
+                    period.textContent = `${translations[lang]['per_day']} (${translations[lang]['local_price']})`;
+                } else if (currentText.includes('Wisatawan') || currentText.includes('Tourist')) {
+                    period.textContent = `${translations[lang]['per_day']} (${translations[lang]['tourist_price']})`;
+                }
+            });
+            
+            // Update WhatsApp buttons
+            document.querySelectorAll('.btn-pesan').forEach(btn => {
+                const icon = '<i class="bi bi-whatsapp"></i> ';
+                btn.innerHTML = icon + translations[lang]['order_whatsapp'];
+            });
+            
+            // Update elements with data-translate-key
             document.querySelectorAll('[data-translate-key]').forEach(element => {
                 const key = element.getAttribute('data-translate-key');
                 if (translations[lang][key]) {
-                    // For buttons, only update textContent to preserve onclick handlers
-                    if (element.tagName === 'BUTTON' && element.hasAttribute('onclick')) {
-                        element.textContent = translations[lang][key];
-                    } else if (element.tagName === 'SPAN') {
-                        // For spans, update textContent
+                    if (element.tagName === 'SPAN') {
                         element.textContent = translations[lang][key];
                     } else {
-                        // For other elements, update innerHTML
                         element.innerHTML = translations[lang][key];
                     }
                 }
