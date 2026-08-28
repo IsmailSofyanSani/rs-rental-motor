@@ -1,0 +1,69 @@
+PENTING: TAMBAHKAN GAMBAR MOTOR ANDA DI FOLDER INI
+========================================================
+
+Anda perlu menambahkan foto-foto motor Anda sendiri ke folder ini.
+
+File gambar yang diperlukan:
+----------------------------
+
+1. honda-vario-125.webp
+   - Foto Honda Vario 125
+   - Format: WebP
+   - Dimensi rekomendasi: 800x600px atau 1200x900px
+
+2. honda-beat-street.webp
+   - Foto Honda Beat Street
+   - Format: WebP
+   - Dimensi rekomendasi: 800x600px atau 1200x900px
+
+3. yamaha-nmax.webp
+   - Foto Yamaha NMAX
+   - Format: WebP
+   - Dimensi rekomendasi: 800x600px atau 1200x900px
+
+4. og-image.jpg
+   - Gambar untuk preview saat link dibagikan di WhatsApp/Facebook
+   - Format: JPG atau PNG
+   - Dimensi: 1200x630px (rasio Open Graph standard)
+   - Bisa berisi logo + text "RS Rental Motor Malang"
+
+5. favicon.png
+   - Icon kecil yang muncul di tab browser
+   - Format: PNG
+   - Dimensi: 32x32px atau 64x64px
+   - Bisa berisi logo atau inisial "RS"
+
+
+CARA CONVERT GAMBAR KE WEBP:
+-----------------------------
+
+Opsi 1: Online (Mudah)
+- Kunjungi: https://squoosh.app/
+- Upload gambar JPG/PNG Anda
+- Pilih format WebP di panel kanan
+- Set quality 85%
+- Download hasil
+
+Opsi 2: Bulk Convert
+- Kunjungi: https://cloudconvert.com/jpg-to-webp
+- Upload beberapa gambar sekaligus
+- Convert semua ke WebP
+
+Opsi 3: Photoshop
+- Open gambar
+- File > Save As
+- Pilih format WebP
+- Quality 85-90%
+
+
+TIPS FOTO MOTOR:
+-----------------
+✓ Foto dari sisi samping (angle 45 derajat lebih bagus)
+✓ Background bersih dan rapi
+✓ Pencahayaan yang baik (outdoor/siang hari)
+✓ Motor dalam kondisi bersih
+✓ Fokus tajam pada motor
+✓ Crop agar motor jadi fokus utama
+
+
+Setelah gambar siap, hapus file PLACEHOLDER-INFO.txt ini.

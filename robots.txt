@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://rsrentalmotormalang.com/sitemap.xml
+
+# Disallow crawling of assets (optional, untuk menghemat crawl budget)
+# User-agent: *
+# Disallow: /assets/
+
+# Allow Google Image bot to crawl images
+User-agent: Googlebot-Image
+Allow: /assets/img/
