@@ -55,20 +55,27 @@
       },
       "telephone": "+62 851-9455-3402",
       "priceRange": "Rp 55.000 - Rp 100.000",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "19:00"
-      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
       "servesCuisine": "",
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -2190,7 +2197,7 @@
                             </div>
                             <div class="location-text">
                                 <h5>Jam Operasional</h5>
-                                <p>Setiap Hari: 09:00 - 19:00 WIB<br>Fast Respon WhatsApp</p>
+                                <p>Senin - Sabtu: 09:00 - 19:00 WIB<br>Minggu: 08:00 - 18:00 WIB<br>Fast Respon WhatsApp</p>
                             </div>
                         </div>
                         
@@ -2256,8 +2263,9 @@
                 <div class="col-lg-4">
                     <h5>Jam Operasional</h5>
                     <p>
-                        <i class="bi bi-clock-fill"></i> Setiap Hari<br>
-                        09:00 - 19:00 WIB
+                        <i class="bi bi-clock-fill"></i> Senin - Sabtu<br>
+                        09:00 - 19:00 WIB<br>
+                        <small>Minggu: 08:00 - 18:00 WIB</small>
                     </p>
                     <p class="mt-3">
                         <strong>Fast Respon via WhatsApp</strong>
@@ -2292,7 +2300,7 @@
                 'open_daily': 'Buka<br><small style="font-size: 1.5rem;">Setiap Hari</small>',
                 'free': 'Gratis',
                 'helmet_raincoat': 'Helm & Jas Hujan (Selama Persediaan Masih Ada)',
-                'operational_hours': '09:00 - 19:00',
+                'operational_hours': '09:00 - 19:00 (Sen-Sab), 08:00 - 18:00 (Min)',
                 
                 // Sections
                 'why_choose': 'Kenapa Banyak Customer Memilih Kami?',
@@ -2335,7 +2343,7 @@
                 // Location Details
                 'complete_address': 'Alamat Lengkap',
                 'operating_hours_title': 'Jam Operasional',
-                'every_day_hours': 'Setiap Hari: 09:00 - 19:00 WIB',
+                'every_day_hours': 'Senin - Sabtu: 09:00 - 19:00 WIB | Minggu: 08:00 - 18:00 WIB',
                 'fast_wa_247': 'Fast Respon WhatsApp 24/7',
                 'contact_us_title': 'Hubungi Kami',
                 'get_directions': 'Petunjuk Arah',
@@ -2378,7 +2386,7 @@
                 'operational': 'Jam Operasional',
                 'every_day': 'Setiap Hari',
                 'fast_response': 'Fast Respon via WhatsApp',
-                'footer_desc': 'Rental motor terpercaya di Malang dengan pelayanan terbaik dan harga terjangkau. Siap antar motor ke lokasi Anda!',
+                'footer_desc': 'Rental motor terpercaya di Malang dengan pelayanan terbaik dan harga terjangkau. Siap antar/jemput motor ke lokasi Anda!',
             },
             en: {
                 // Stats
@@ -2430,7 +2438,7 @@
                 // Location Details
                 'complete_address': 'Complete Address',
                 'operating_hours_title': 'Operating Hours',
-                'every_day_hours': 'Every Day: 09:00 AM - 07:00 PM WIB',
+                'every_day_hours': 'Mon - Sat: 09:00 AM - 07:00 PM WIB | Sun: 08:00 AM - 06:00 PM WIB',
                 'fast_wa_247': 'Fast Response WhatsApp 24/7',
                 'contact_us_title': 'Contact Us',
                 'get_directions': 'Get Directions',
@@ -2535,7 +2543,7 @@
                     'Alamat Lengkap': 'Alamat Lengkap',
                     'Jam Operasional': 'Jam Operasional',
                     'Hubungi Kami': 'Hubungi Kami',
-                    'Setiap Hari: 09:00 - 19:00 WIB': 'Setiap Hari: 09:00 - 19:00 WIB',
+                    'Setiap Hari: 09:00 - 19:00 WIB': 'Senin - Sabtu: 09:00 - 19:00 WIB | Minggu: 08:00 - 18:00 WIB',
                     'Fast Respon WhatsApp 24/7': 'Fast Respon WhatsApp 24/7',
                     'Petunjuk Arah': 'Petunjuk Arah',
                     'Kontak Kami': 'Kontak Kami',
@@ -2564,7 +2572,7 @@
                     'Alamat Lengkap': 'Complete Address',
                     'Jam Operasional': 'Operating Hours',
                     'Hubungi Kami': 'Contact Us',
-                    'Setiap Hari: 09:00 - 19:00 WIB': 'Every Day: 09:00 AM - 07:00 PM WIB',
+                    'Setiap Hari: 09:00 - 19:00 WIB': 'Mon - Sat: 09:00 AM - 07:00 PM | Sun: 08:00 AM - 06:00 PM WIB',
                     'Fast Respon WhatsApp 24/7': 'Fast Response WhatsApp 24/7',
                     'Petunjuk Arah': 'Get Directions',
                     'Kontak Kami': 'Contact Us',
